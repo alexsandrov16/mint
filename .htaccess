@@ -1,0 +1,16 @@
+# Denegar acceso a directorios.
+Options -Indexes
+
+# Activar HTACCESS
+RewriteEngine On
+
+# La ruta y el archivo solicitados no coinciden directamente con una carpeta física.
+RewriteCond %{REQUEST_FILENAME} !-d
+# La ruta y el archivo solicitados no coinciden directamente con un archivo físico
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# Reescribe internamente la solicitud en el script index.php
+RewriteRule ^(.*)$ index.php/$1 [L]
+
+# Denegar acceso a extenciones.
+RewriteRule \.(txt|md|json|env|log|sh|bat)$ error [F]
