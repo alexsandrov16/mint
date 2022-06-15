@@ -1,5 +1,5 @@
 <?php
-defined('PLUME') || die;
+defined('MINT') || die;
 
 /**
  * Botstrap app
@@ -11,17 +11,14 @@ defined('PLUME') || die;
  * @package
  */
 
-
+define('ABS_PATH',dirname( __DIR__) . DIRECTORY_SEPARATOR);
 //Defines
-require_once 'defines.php';
+require_once 'inc/defines.php';
 
 //Autoloader PSR4
-require_once 'autoload.php';
+require_once 'inc/autoload.php';
 
 //Functions 
-require_once ABS_PATH.'src/functions.php';
+require_once 'inc/functions.php';
 
-//Installing CMS esto ba en el fichero index
-/*if (file_exists(ABS_PATH . 'install.php')) {
-    require 'install.php';
-}*/
+return new Mint\App();

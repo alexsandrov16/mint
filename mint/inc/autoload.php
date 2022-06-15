@@ -1,14 +1,14 @@
 <?php
-defined('PLUME') || die;
+defined('MINT') || die;
 
 /**
  * @package Autoload PSR4
  */
 
 $namespace = [
-    'Plume'        => 'src/plume',
-    'Plume\Kernel' => 'src/core',
-    'Tester'       => 'test'
+    'Mint'        => 'mint/core',
+    //'Plume\Kernel' => 'src/core',
+    //'Tester'       => 'test'
 ];
 
 spl_autoload_register(function ($class) use ($namespace) {
@@ -20,5 +20,5 @@ spl_autoload_register(function ($class) use ($namespace) {
             return require_once $file;
         }
     }
-    die("<pre>Error: The class <b>{$class}</b> Not found</pre>");
+    die("<pre>Error in class <b>{$class}</b>. Not found {$file}</pre>");
 });

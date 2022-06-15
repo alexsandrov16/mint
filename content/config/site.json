@@ -1,0 +1,14 @@
+{
+    "title":        "Mi Sitio",
+    "description":  "Sitio de pruebas",
+    "base_url":     "http://localhost/mint",
+    "debug":        true,
+    "adm_theme":    "pico",
+    "web_theme":    "skeleton",
+    "timezone":     "America/Havana",
+    "time_format":  "Y-m-d H:i:s",
+    "language":     "es-ES",
+    "charset":      "UTF-8",
+    "session_name": "fp-site",
+    "root":         false
+}
