@@ -8,4 +8,4 @@
 define('MINT', true);
 
 //Fichero de arranque
-require_once 'mint/app.php';
+require_once 'mint/boot.php';

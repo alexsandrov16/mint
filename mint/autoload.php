@@ -6,7 +6,7 @@ defined('MINT') || die;
  */
 
 $namespace = [
-    'Mint'        => 'mint/core',
+    'Mint'        => 'mint',
     //'Plume\Kernel' => 'src/core',
     //'Tester'       => 'test'
 ];

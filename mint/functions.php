@@ -73,7 +73,7 @@ function source($file, $line, $limit_line = 15)
  **/
 function view(string $filename, array $data, bool $adm = false)
 {
-    $file = ($adm) ? PATH_THEMES.env('adm_theme').DS."$filename.php" : PATH_THEMES.env('web_theme').DS."$filename.php" ;
+    $file = ($adm) ? _THEMES.env('adm_theme').DS."$filename.php" : _THEMES.env('web_theme').DS."$filename.php" ;
 
     foreach ($data as $key => $value) {
         $$key = $value;
