@@ -1,6 +1,6 @@
 <?php
 
-defined('PLUME') || die;
+defined('MINT') || die;
 
 ?>
 

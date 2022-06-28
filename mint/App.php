@@ -45,9 +45,7 @@ class App
         }
         $rute = new Rute;
 
-        $rute->get('/', function () {
-            echo 'Hello World!';
-        });
+        $rute->get('/', ['Mint\Controller\FrontPage']);
 
         $rute->routing();
     }

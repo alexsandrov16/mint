@@ -1,5 +1,5 @@
 <?php
-defined('PLUME') || die;
+defined('MINT') || die;
 
 function clean($file)
 {

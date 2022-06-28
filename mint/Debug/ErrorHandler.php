@@ -2,9 +2,7 @@
 
 namespace Mint\Debug;
 
-use DirectoryIterator;
 use ErrorException;
-use Mint\Http\Request;
 use Mint\Http\Response;
 use Throwable;
 
@@ -145,7 +143,7 @@ class ErrorHandler
         })();*/
 
         $headers = [];
-        $response = $e->getCode() != 404 ? new Response(500, $headers) : new Response(404, $headers);
+        $e->getCode() != 404 ? new Response(500, $headers) : new Response(404, $headers);
         if (ob_get_length()) ob_end_clean();
         extract($this->collectVars($e));
         //include FP_PATH . "admin/$view.php";

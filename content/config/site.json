@@ -1,14 +1,14 @@
 {
-    "title":        "Mi Sitio",
-    "description":  "Sitio de pruebas",
+    "title":        "Welcome back to Mint 🍃",
+    "description":  "A flat-file-cms to manage your website.",
     "base_url":     "http://localhost/mint",
     "debug":        true,
-    "adm_theme":    "pico",
-    "web_theme":    "skeleton",
+    "adm_theme":    "adm",
+    "web_theme":    "style",
     "timezone":     "America/Havana",
     "time_format":  "Y-m-d H:i:s",
     "language":     "es-ES",
     "charset":      "UTF-8",
-    "session_name": "fp-site",
+    "session_name": "mint",
     "root":         false
 }
