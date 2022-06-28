@@ -1,3 +1,5 @@
+<?php defined('MINT') || die; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 

@@ -1,8 +1,7 @@
 <?php
+defined('PLUME') || die;
 
 namespace Plume\Kernel\Cookies;
-
-defined('PLUME') || die;
 
 /**
  * undocumented class

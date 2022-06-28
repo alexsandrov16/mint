@@ -1,12 +1,11 @@
 <?php
 
+defined('MINT') || die;
 namespace Mint\Debug;
 
 use ErrorException;
 use Mint\Http\Response;
 use Throwable;
-
-defined('MINT') || die;
 
 /**
  * undocumented class

@@ -1,11 +1,10 @@
 <?php
+defined('MINT') || die;
 
 namespace Mint\Config;
 
 use Mint\File\Json;
 use Mint\Traits\Singleton;
-
-defined('MINT') || die;
 
 /**
  * undocumented class
@@ -28,11 +27,11 @@ class Config
         $this->load();
 
         //Zona Horaria
-        //date_default_timezone_set(env('timezone'));
+        date_default_timezone_set(env('timezone'));
 
         //Set internal encoding.
-        //ini_set('default_charset', env('charset'));
-        //mb_internal_encoding(env('charset'));
+        ini_set('default_charset', env('charset'));
+        mb_internal_encoding(env('charset'));
     }
 
     /**
