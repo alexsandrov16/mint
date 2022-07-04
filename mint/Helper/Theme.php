@@ -17,6 +17,18 @@ class Theme
      * @return type
      * @throws conditon
      **/
+    public function __construct(string $tpl)
+    {
+        $this->tpl = $tpl;
+    }
+
+    /**
+     * Meta Etiquetas
+     *
+     * Devuelve las meta-etiquetas a utilizar en la plantilla
+     *
+     * @return string
+     **/
     public function metaTag()
     {
         $title = env('title');
@@ -72,7 +84,29 @@ class Theme
      **/
     public function favicon()
     {
-        return '<link rel="icon" href="' . env('base_url') . _MEDIA . 'favicon.png" type="image/x-icon">';
+        //return '<link rel="icon" href="' . env('base_url') . _MEDIA . 'favicon.png" type="image/x-icon">';
+
+
+        /*$url = env('base_url');
+        $d_favicon = "$url/flatpage/admin/assets/img/favicon.ico";
+        if (preg_match("/admin/i", $_SERVER['REQUEST_URI'])) {
+            return "<link rel='shortcut icon' href='{$d_favicon}' type='image/x-icon'>";
+        }*/
+
+        /*$iterator = new DirectoryIterator(ABS_PATH);
+        foreach ($iterator as $finfo) {
+            if ($finfo->isFile()) {
+                foreach (['jpeg', 'jpg', 'png', 'ico'] as $value) {
+                    if ($finfo->getExtension() == $value && $finfo->getBasename($value) == 'favicon.') {
+                        return "<link rel='shortcut icon' href='{$url}/{$finfo->getBasename()}' type='image/{$value}'>";
+                    }
+                }
+            }
+        }
+        return "<link rel='shortcut icon' href='{$d_favicon}' type='image/x-icon'>";*/
+
+
+
     }
 
     /**
@@ -84,8 +118,43 @@ class Theme
      * @return type
      * @throws conditon
      **/
-    public function css(string $ss)
+    public function css(string $style)
     {
+        $style = (preg_match("/http/i", $style)) ? $style : env('base_url') . "/content/themes/$this->tpl/css/$style" ;
+        echo "<link rel='stylesheet' href='$style'>";
+
+        return $this;
+    }
+
+    /**
+     * undocumented function summary
+     *
+     * Undocumented function long description
+     *
+     * @param Type $var Description
+     * @return type
+     * @throws conditon
+     **/
+    public function js(string $script)
+    {
+        $script = (preg_match("/http/i", $script)) ? $script : env('base_url') . "/content/themes/$this->tpl/js/$script" ;
+        echo "<script src='$script'></script>";
+
+        return $this;
+    }
+
+    /**
+     * undocumented function summary
+     *
+     * Undocumented function long description
+     *
+     * @param Type $var Description
+     * @return type
+     * @throws conditon
+     **/
+    public function partial(string $file)
+    {
+        require_once _THEMES."$this->tpl/partial/$file.php";
         return $this;
     }
 }

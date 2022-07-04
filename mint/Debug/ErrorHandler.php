@@ -1,6 +1,6 @@
 <?php
-
 defined('MINT') || die;
+
 namespace Mint\Debug;
 
 use ErrorException;

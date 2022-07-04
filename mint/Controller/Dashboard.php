@@ -1,10 +1,11 @@
 <?php
+defined('MINT') || die;
 
 namespace Mint\Controller;
 
+use Mint\App;
 use Mint\Cookies\Session;
-
-defined('MINT') || die;
+use Mint\Helper\Theme;
 
 /**
  * undocumented class
@@ -18,6 +19,8 @@ class Dashboard
         ]);
 
         $this->session->start();
+
+        $this->theme = new Theme(env('adm_theme'));
     }
 
     public function index()
@@ -26,6 +29,12 @@ class Dashboard
             echo 'Dashboard';
             return;
         }
-        echo 'login';
+        if ($_POST) {
+            # code...
+        }
+        return view('login',[
+            'page_title' => 'Iniciar Sesión | '. App::_name,
+            'page'=> $this->theme
+        ],true);
     }
 }

@@ -10,12 +10,17 @@ use Mint\Helper\Theme;
  */
 class FrontPage
 {
+    public function __construct()
+    {
+        $this->theme = new Theme(env('site_theme'));
+    }
+
     public function index()
     {
         return view(__FUNCTION__, [
             'title' => env('title'),
             'description' => env('description'),
-            'page' => new Theme
+            'page' => $this->theme
         ]);
     }
 }

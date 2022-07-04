@@ -1,14 +1,14 @@
 {
-    "title":        "Welcome back to Mint 🍃",
-    "description":  "A flat-file-cms to manage your website.",
-    "base_url":     "http://localhost/mint",
-    "debug":        true,
-    "adm_theme":    "adm",
-    "web_theme":    "style",
-    "timezone":     "America/Havana",
-    "time_format":  "Y-m-d H:i:s",
-    "language":     "es-ES",
-    "charset":      "UTF-8",
-    "session_name": "mint",
-    "root":         false
+    "site_name":         "Welcome back to Mint 🍃",
+    "site_description":  "A flat-file-cms to manage your website.",
+    "base_url":          "http://localhost/mint",
+    "debug":             true,
+    "adm_theme":         "adm",
+    "web_theme":         "style",
+    "timezone":          "America/Havana",
+    "time_format":       "Y-m-d H:i:s",
+    "language":          "es-ES",
+    "charset":           "UTF-8",
+    "session_name":      "mint",
+    "root":              false
 }
