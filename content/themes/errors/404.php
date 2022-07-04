@@ -1,8 +1,4 @@
-<?php
-
-defined('MINT') || die;
-
-?>
+<?php defined('MINT') || die; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,6 +10,7 @@ defined('MINT') || die;
     <title>Ups!</title>
     <link rel="stylesheet" href="<?= env('base_url') ?>/src/assets/style.css">
 </head>
+
 <body>
     <main>
         <h1><?= $code ?></h1>

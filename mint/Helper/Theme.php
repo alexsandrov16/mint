@@ -1,8 +1,7 @@
 <?php
-
-namespace Mint\Theme;
-
 defined('MINT') || die;
+
+namespace Mint\Helper;
 
 /**
  * undocumented class

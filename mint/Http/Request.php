@@ -1,10 +1,10 @@
 <?php
+defined('MINT') || die;
 
 namespace Mint\Http;
 
 use Mint\Traits\MessageHttp;
 
-defined('MINT') || die;
 /**
  * 
  * @package Http

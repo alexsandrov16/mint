@@ -1,10 +1,9 @@
 <?php
+defined('MINT') || die;
 
 namespace Mint\Controller;
 
-use Mint\Theme\Theme;
-
-defined('MINT') || die;
+use Mint\Helper\Theme;
 
 /**
  * undocumented class

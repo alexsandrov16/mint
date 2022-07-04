@@ -3,7 +3,6 @@ defined('MINT') || die;
 
 use Mint\Config\Config;
 
-
 /**
  * undocumented function summary
  *

@@ -1,4 +1,5 @@
 <?php
+defined('MINT') || die;
 
 namespace Mint\Router;
 
@@ -6,8 +7,6 @@ use Exception;
 use Mint\Http\Request;
 use Mint\Http\Uri;
 use ReflectionFunction;
-
-defined('MINT') || die;
 
 /**
  * Disparador de rutas

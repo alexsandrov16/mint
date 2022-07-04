@@ -1,12 +1,11 @@
 <?php
+defined('MINT') || die;
 
 namespace Mint;
 
 use Mint\Config\Config;
 use Mint\Debug\ErrorHandler;
 use Mint\Router\Rute;
-
-defined('MINT') || die;
 
 /**
  * @package Mint App
@@ -16,9 +15,7 @@ class App
     const _name = 'Mint';
     const _version = '0.6 alpha';
     const php_version = 7.4;
-
-    /** @var Type $var description */
-    protected $config;
+    static $modules = ['mbstring', 'json'];
 
     public function __construct()
     {

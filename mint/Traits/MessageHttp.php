@@ -1,8 +1,8 @@
 <?php
+defined('MINT') || die;
 
 namespace Mint\Traits;
 
-defined('MINT') || die;
 /** 
  * Los mensajes HTTP consisten en solicitudes de un cliente a un servidor y respuestas 
  * de un servidor a un cliente.  Esta interfaz define los métodos comunes a 

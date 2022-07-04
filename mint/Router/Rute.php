@@ -1,9 +1,7 @@
 <?php
-
-namespace Mint\Router;
-
 defined('MINT') || die;
 
+namespace Mint\Router;
 
 /**
  * Manejo de rutas
