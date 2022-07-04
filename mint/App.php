@@ -47,6 +47,10 @@ class App
 
         $rute->get('/', ['Mint\Controller\FrontPage']);
 
+        //Dashboard
+        $rute->map(['get','post'], '/admin', ['Mint\Controller\Dashboard']);
+
+        //Run
         $rute->routing();
     }
 

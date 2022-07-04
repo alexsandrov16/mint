@@ -1,8 +1,8 @@
 <?php
 
-namespace Plume\Kernel\Cookies;
+namespace Mint\Cookies;
 
-defined('PLUME') || die;
+defined('MINT') || die;
 
 /**
  * undocumented class
