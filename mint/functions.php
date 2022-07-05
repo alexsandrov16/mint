@@ -4,13 +4,12 @@ defined('MINT') || die;
 use Mint\Config\Config;
 
 /**
- * undocumented function summary
+ * Environment
  *
- * Undocumented function long description
+ * Devuelve valores de las variables de entorno
  *
- * @param Type $var Description
- * @return mixed
- * @throws conditon
+ * @param string $name Nombre de la variable de entorno
+ * @return mixed 
  **/
 function env(string $name)
 {
@@ -95,7 +94,20 @@ function view(string $filename, array $data, bool $adm = false)
  * @return mixed
  * @throws conditon
  **/
-function redirect($path = '/')
+function redirect(string $path = '/')
 {
     return preg_match('#http://#', $path) ? header("Location:$path") : header('Location:'.env('base_url').$path) ;
+}
+
+/**
+ * undocumented function summary
+ *
+ * Devuelve la ruta base de la aplicacion
+ *
+ * @param string $path path de la ruta a devolver
+ * @return string
+ **/
+function base(string $path = null)
+{
+    return env('base_url')."/$path";
 }

@@ -175,7 +175,7 @@ class Dispatcher
     private function request()
     {
         //agregar base_uri
-        $uri = new Uri(env('base_url'));
+        $uri = new Uri(base());
         return trim(str_replace($uri->getPath(), '', $this->request->getRequestTarget()), '/');
     }
 }

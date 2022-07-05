@@ -12,14 +12,15 @@ class FrontPage
 {
     public function __construct()
     {
-        $this->theme = new Theme(env('site_theme'));
+        $this->theme = new Theme(env('web_theme'));
     }
 
     public function index()
     {
         return view(__FUNCTION__, [
-            'title' => env('title'),
-            'description' => env('description'),
+            'page_title' => 'Home - Site',
+            'page_description' => 'Pagina de inicio',
+            //'description' => env('description'),
             'page' => $this->theme
         ]);
     }

@@ -3,6 +3,9 @@ defined('MINT') || die;
 
 namespace Mint\Helper;
 
+use Mint\File\ManagerFile;
+use Mint\Http\Request;
+
 /**
  * undocumented class
  */
@@ -14,8 +17,6 @@ class Theme
      * Undocumented function long description
      *
      * @param Type $var Description
-     * @return type
-     * @throws conditon
      **/
     public function __construct(string $tpl)
     {
@@ -27,12 +28,12 @@ class Theme
      *
      * Devuelve las meta-etiquetas a utilizar en la plantilla
      *
-     * @return string
+     * @return object
      **/
-    public function metaTag()
+    public function metaTag(string $title, string $description = null)
     {
-        $title = env('title');
-        $description = env('description');
+        $site = env('site_name');
+        $site_desc = env('site_description');
         $charset = env('charset');
         echo <<<HTML
             <meta charset="$charset">
@@ -43,7 +44,7 @@ class Theme
             <meta name="description" content="$description">
             <meta name="keyworks" content="">
             <!--Social-->
-            {$this->social($title,$description)}
+            {$this->social($site,$site_desc)}
             <!--Favicon-->
             {$this->favicon()}
             HTML;
@@ -57,12 +58,11 @@ class Theme
      * Undocumented function long description
      *
      * @param Type $var Description
-     * @return type
-     * @throws conditon
+     * @return string
      **/
     private function social(string $title, string $description = null)
     {
-        $url = env('base_url');
+        $url = base();
         $img = $url . _MEDIA . 'logo.png';
         return <<<HTML
         <meta property="og:title" content="$title">
@@ -78,35 +78,30 @@ class Theme
      *
      * Undocumented function long description
      *
-     * @param Type $var Description
-     * @return type
+     * @return string
      * @throws conditon
      **/
     public function favicon()
     {
-        //return '<link rel="icon" href="' . env('base_url') . _MEDIA . 'favicon.png" type="image/x-icon">';
+        $request = new Request;
+        if (preg_match("/admin/i", $request->getRequestTarget())) {
+            $favicon = base(_MEDIA . 'favicon.png');
+        }
 
-
-        /*$url = env('base_url');
-        $d_favicon = "$url/flatpage/admin/assets/img/favicon.ico";
-        if (preg_match("/admin/i", $_SERVER['REQUEST_URI'])) {
-            return "<link rel='shortcut icon' href='{$d_favicon}' type='image/x-icon'>";
-        }*/
-
-        /*$iterator = new DirectoryIterator(ABS_PATH);
+        $iterator = new \DirectoryIterator(ABS_PATH);
         foreach ($iterator as $finfo) {
             if ($finfo->isFile()) {
                 foreach (['jpeg', 'jpg', 'png', 'ico'] as $value) {
                     if ($finfo->getExtension() == $value && $finfo->getBasename($value) == 'favicon.') {
-                        return "<link rel='shortcut icon' href='{$url}/{$finfo->getBasename()}' type='image/{$value}'>";
+                        $favicon = base("favicon.$value");
                     }
                 }
             }
         }
-        return "<link rel='shortcut icon' href='{$d_favicon}' type='image/x-icon'>";*/
 
+        $favicon = isset($favicon) ? $favicon : base(_MEDIA . 'favicon.png');
 
-
+        return "<link rel='icon' href='$favicon' type='image/x-icon'>";
     }
 
     /**
@@ -115,12 +110,11 @@ class Theme
      * Undocumented function long description
      *
      * @param Type $var Description
-     * @return type
-     * @throws conditon
+     * @return object
      **/
     public function css(string $style)
     {
-        $style = (preg_match("/http/i", $style)) ? $style : env('base_url') . "/content/themes/$this->tpl/css/$style" ;
+        $style = (preg_match("/http/i", $style)) ? $style : base("content/themes/$this->tpl/css/$style");
         echo "<link rel='stylesheet' href='$style'>";
 
         return $this;
@@ -132,12 +126,11 @@ class Theme
      * Undocumented function long description
      *
      * @param Type $var Description
-     * @return type
-     * @throws conditon
+     * @return object
      **/
     public function js(string $script)
     {
-        $script = (preg_match("/http/i", $script)) ? $script : env('base_url') . "/content/themes/$this->tpl/js/$script" ;
+        $script = (preg_match("/http/i", $script)) ? $script : base("content/themes/$this->tpl/js/$script");
         echo "<script src='$script'></script>";
 
         return $this;
@@ -154,7 +147,7 @@ class Theme
      **/
     public function partial(string $file)
     {
-        require_once _THEMES."$this->tpl/partial/$file.php";
+        require_once _THEMES . "$this->tpl/partial/$file.php";
         return $this;
     }
 }

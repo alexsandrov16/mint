@@ -63,4 +63,32 @@ class ManagerFile
     {
         # code...
     }
+
+    /**
+     * undocumented function summary
+     *
+     * Undocumented function long description
+     *
+     * @param Type $var Description
+     * @return type
+     * @throws conditon
+     **/
+    public function getFile(string $filename)
+    {
+        # code...
+    }
+
+    /**
+     * undocumented function summary
+     *
+     * Undocumented function long description
+     *
+     * @param Type $var Description
+     * @return type
+     * @throws conditon
+     **/
+    public function hasFile(string $filename)
+    {
+        # code...
+    }
 }

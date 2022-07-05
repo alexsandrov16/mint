@@ -4,7 +4,7 @@
     "base_url":          "http://localhost/mint",
     "debug":             true,
     "adm_theme":         "adm",
-    "web_theme":         "style",
+    "web_theme":         "stylebot",
     "timezone":          "America/Havana",
     "time_format":       "Y-m-d H:i:s",
     "language":          "es-ES",
