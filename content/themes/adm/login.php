@@ -9,7 +9,7 @@
     <?=
     $page->css('pico.min.css')
         ->css('style.css')
-        ->favicon(
+        ->favicon()
     ?>
 </head>
 
