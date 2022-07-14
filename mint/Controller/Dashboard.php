@@ -22,10 +22,10 @@ class Dashboard
 
         $this->session->start();
 
-        if (!$this->session->has('active')) {
+        /*if (!$this->session->has('active')) {
             $this->login();
             die;
-        }
+        }*/
     }
 
     public function index()

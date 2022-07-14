@@ -83,11 +83,6 @@ class Theme
      **/
     public function favicon()
     {
-        $request = new Request;
-        if (preg_match("/admin/i", $request->getRequestTarget())) {
-            $favicon = base(_MEDIA . 'favicon.png');
-        }
-
         $iterator = new \DirectoryIterator(ABS_PATH);
         foreach ($iterator as $finfo) {
             if ($finfo->isFile()) {
@@ -99,7 +94,12 @@ class Theme
             }
         }
 
-        $favicon = isset($favicon) ? $favicon : base(_MEDIA . 'favicon.png');
+        $request = new Request;
+        if (preg_match("/admin/i", $request->getRequestTarget())) {
+            $favicon = base('content/media/favicon.png');
+        }
+
+        $favicon = isset($favicon) ? $favicon : base('content/media/favicon.png');
 
         return "<link rel='icon' href='$favicon' type='image/x-icon'>";
     }
@@ -133,21 +133,6 @@ class Theme
         $script = (preg_match("/http/i", $script)) ? $script : base("content/themes/$this->tpl/js/$script");
         echo "<script src='$script'></script>";
 
-        return $this;
-    }
-
-    /**
-     * undocumented function summary
-     *
-     * Undocumented function long description
-     *
-     * @param Type $var Description
-     * @return type
-     * @throws conditon
-     **/
-    public function partial(string $file)
-    {
-        require_once _THEMES . "$this->tpl/partial/$file.php";
         return $this;
     }
 }

@@ -5,12 +5,6 @@ function clean($file)
 {
     return str_replace(ABS_PATH, '..' . DS, $file);
 }
-
-function randomStr()
-{
-    $str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    return substr(str_shuffle($str), 0, 5);
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">

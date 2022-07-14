@@ -1,3 +1,32 @@
+svg{
+    height: 24px;
+    width: 24px;
+    fill: var(--h1-color);
+    cursor: pointer;
+}
+
+summary.svg{
+    background-color: transparent;
+}
+summary.svg::after{
+    content: none !important;
+}
+
+aside{
+    position: fixed;
+    height: 100vh;
+    transform: translateX(-100%);
+    transition: all .6s;
+}/*large desktops max  -> width:8em | min -> width:4em*//*
+aside.menu{
+    transform: translateX(0%);
+    background-color: rgba(255, 255, 255, .15);
+}
+aside nav{
+    background-color: var(--card-background-color);
+}*/
+
+/*Login*/
 form.login {
     width: 100%;
     margin: 0 auto;
@@ -13,6 +42,26 @@ form.login {
 @media (min-width: 992px) {
     form.login {
         width: 60%;
+    }
+    section{
+        margin-left: 4em;
+        transition: all .6s;
+    }
+    aside{
+        width: 4em;
+        transform: translateX(0);
+        text-align: center;
+    }
+    section.left{
+        margin-left: 8em;
+        transition: all .6s;
+    }
+    aside.menu{
+        width: 8em;
+    }
+    aside nav a.logo{
+        padding-top: 1.4em;
+        padding-bottom: .65em;
     }
 }
 
