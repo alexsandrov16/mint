@@ -20,8 +20,3 @@ Mint necesita las siguientes extensiones de PHP:
 - PHP Información de archivo
 
 ~~Aunque es opcional, recomendamos encarecidamente habilitar las siguientes extensiones de PHP: APC, APCu, XCache, Memcached o Redis para un mejor rendimiento.~~
-
-
-```
-tjt
-```
