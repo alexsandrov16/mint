@@ -1,7 +1,7 @@
 <?php
-defined('MINT') || die;
-
 namespace Mint\Debug;
+
+defined('MINT') || die;
 
 use ErrorException;
 use Mint\Http\Response;

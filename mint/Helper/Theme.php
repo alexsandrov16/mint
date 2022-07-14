@@ -1,7 +1,7 @@
 <?php
-defined('MINT') || die;
-
 namespace Mint\Helper;
+
+defined('MINT') || die;
 
 use Mint\File\ManagerFile;
 use Mint\Http\Request;

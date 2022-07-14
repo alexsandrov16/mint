@@ -1,7 +1,7 @@
 <?php
-defined('MINT') || die;
-
 namespace Mint\Http;
+
+defined('MINT') || die;
 
 /**
  * undocumented class

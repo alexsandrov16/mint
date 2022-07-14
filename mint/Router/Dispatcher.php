@@ -1,7 +1,7 @@
 <?php
-defined('MINT') || die;
-
 namespace Mint\Router;
+
+defined('MINT') || die;
 
 use Exception;
 use Mint\Http\Request;

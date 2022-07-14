@@ -1,7 +1,7 @@
 <?php
-defined('MINT') || die;
-
 namespace Mint;
+
+defined('MINT') || die;
 
 use Mint\Config\Config;
 use Mint\Debug\ErrorHandler;

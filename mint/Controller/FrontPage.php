@@ -1,7 +1,7 @@
 <?php
-defined('MINT') || die;
-
 namespace Mint\Controller;
+
+defined('MINT') || die;
 
 use Mint\Helper\Theme;
 

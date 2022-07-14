@@ -1,7 +1,7 @@
 <?php
-defined('MINT') || die;
-
 namespace Mint\Cookies;
+
+defined('MINT') || die;
 
 /**
  * undocumented class

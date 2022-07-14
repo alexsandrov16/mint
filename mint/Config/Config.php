@@ -1,7 +1,7 @@
 <?php
-defined('MINT') || die;
-
 namespace Mint\Config;
+
+defined('MINT') || die;
 
 use Mint\File\Json;
 use Mint\Traits\Singleton;

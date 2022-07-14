@@ -1,7 +1,7 @@
 <?php
-defined('PLUME') || die;
-
 namespace Plume\Kernel\Debug;
+
+defined('PLUME') || die;
 
 /**
  * undocumented class
