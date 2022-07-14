@@ -19,4 +19,4 @@ Mint necesita las siguientes extensiones de PHP:
 - PHP [json](https://www.php.net/manual/en/intro.json.php) para la manipulación de JSON.
 - PHP Información de archivo
 
-Aunque es opcional, recomendamos encarecidamente habilitar las siguientes extensiones de PHP: APC, APCu, XCache, Memcached o Redis para un mejor rendimiento.
+~~Aunque es opcional, recomendamos encarecidamente habilitar las siguientes extensiones de PHP: APC, APCu, XCache, Memcached o Redis para un mejor rendimiento.~~
