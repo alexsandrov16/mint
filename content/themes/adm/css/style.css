@@ -12,11 +12,10 @@ summary.svg::after{
     content: none !important;
 }
 
+
 aside{
     position: fixed;
     height: 100vh;
-    transform: translateX(-100%);
-    transition: all .6s;
 }/*large desktops max  -> width:8em | min -> width:4em*//*
 aside.menu{
     transform: translateX(0%);
@@ -25,6 +24,23 @@ aside.menu{
 aside nav{
     background-color: var(--card-background-color);
 }*/
+aside#desktop{
+    display: none;
+}
+aside#mobile{
+    display: block;
+    transform: translateX(-100%);
+}
+aside a{
+    display: flex !important;
+align-content: center;
+color: var(--secondary);
+}
+aside a svg{
+    margin-right: .5em;
+}
+
+article{margin: 0;}
 
 /*Login*/
 form.login {
@@ -43,26 +59,16 @@ form.login {
     form.login {
         width: 60%;
     }
+    aside#desktop{
+        display: block !important;
+    }
+    aside#mobile{
+        display: none
+    }
     section{
-        margin-left: 4em;
-        transition: all .6s;
+        margin-left: 12em;
     }
-    aside{
-        width: 4em;
-        transform: translateX(0);
-        text-align: center;
-    }
-    section.left{
-        margin-left: 8em;
-        transition: all .6s;
-    }
-    aside.menu{
-        width: 8em;
-    }
-    aside nav a.logo{
-        padding-top: 1.4em;
-        padding-bottom: .65em;
-    }
+
 }
 
 /* X-Large devices (large desktops, 1200px and up)*/
