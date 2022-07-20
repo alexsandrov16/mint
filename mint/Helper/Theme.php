@@ -133,6 +133,6 @@ class Theme
         $script = (preg_match("/http/i", $script)) ? $script : base("content/themes/$this->tpl/js/$script");
         echo "<script src='$script'></script>";
 
-        return $this;
+        //return $this;
     }
 }

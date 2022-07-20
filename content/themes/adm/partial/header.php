@@ -9,6 +9,7 @@
     <?=
     $page->css('pico.min.css')
         ->css('style.css')
+        //->js('modal.js')
         ->favicon()
     ?>
 </head>

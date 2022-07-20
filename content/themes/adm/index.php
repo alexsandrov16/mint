@@ -1,87 +1,89 @@
 <?php include _THEMES . 'adm/partial/header.php' ?>
 
 <body>
-    <nav class="container-fluid">
-        <ul>
-            <a href="<?= base('admin') ?>" class="logo">
-                <img src="<?= base('content/media/favicon.png') ?>" width="40">
-            </a>
-            <li><b>Dashboard</b></li>
-        </ul>
+    <?php include _THEMES . 'adm/partial/sidenav.php' ?>
 
-        <ul>
-            <li>
-                <details role="list" dir="rtl">
-                    <summary aria-haspopup="listbox" role="link" class="svg">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-                        </svg>
-                    </summary>
-                    <ul role="listbox">
-                        <li><a>Action</a></li>
-                        <li><a>Another action</a></li>
-                        <li><a>Something else here</a></li>
-                    </ul>
-                </details>
-            </li>
-        </ul>
-    </nav>
+    <?php include _THEMES . 'adm/partial/navbar.php' ?>
 
-    <div class="container">
-        <aside id="desktop">
-            <nav>
-                <ul>
-                    <li>
-                        <a href="">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
-                                <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z" />
-                            </svg> Dashboard
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-                                <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z" />
-                                <path d="M4.5 12.5A.5.5 0 0 1 5 12h3a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0-2A.5.5 0 0 1 5 10h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm1.639-3.708 1.33.886 1.854-1.855a.25.25 0 0 1 .289-.047l1.888.974V8.5a.5.5 0 0 1-.5.5H5a.5.5 0 0 1-.5-.5V8s1.54-1.274 1.639-1.208zM6.25 6a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5z" />
-                            </svg> Sitios
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-                                <path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816zM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275zM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z" />
-                            </svg> Usuarios
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M11.5 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM9.05 3a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0V3h9.05zM4.5 7a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM2.05 8a2.5 2.5 0 0 1 4.9 0H16v1H6.95a2.5 2.5 0 0 1-4.9 0H0V8h2.05zm9.45 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm-2.45 1a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0v-1h9.05z" />
+    <main class="container">
 
-                            </svg> Ajustes
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </aside>
+        <h3>Dashboard</h3>
 
-        <section>
+        <article>
+
+        <h4>Bienvenido 👋</h4>
+        <p>¡Esperamos que estés progresando bien en tu proyecto! Siéntase libre de leer las últimas noticias sobre Mint. estamos haciendo todo lo posible para mejorar el producto en función de sus comentarios.</p>
+
+
+
+            <h4>¡Bienvenido a Mint CMS! 👋</h4>
+            <p>¡Mint esta listo para funcionar! Puede generar página, añadir temas, personalizar su sitio y mucho más utilizando este panel. A continuación hemos reunido algunos enlaces para que comiences.</p>
+
             <div class="grid">
-                <article>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus ducimus provident corrupti libero, laboriosam, dolor est nesciunt expedita consequatur qui quas repellat molestiae. Sit distinctio blanditiis ab, consequatur sed veniam?</p>
-                </article>
-                <article>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio, ab esse magnam aspernatur iusto error laborum ipsam aliquam tenetur optio quae nam enim ea veritatis sed deleniti ratione accusantium quia!</p>
-                </article>
 
-                <article>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut consequuntur perferendis ipsa vel laudantium ex voluptatibus, labore repudiandae unde distinctio, autem officia culpa molestiae obcaecati rem sequi similique nihil dolores.</p>
-                </article>
+                <ul>
+                    <h4>Comenzar</h4>
+                    <li><a class="open-modal" onclick="toggleModal(event)" data-target="new-page">Añadir una página nueva</a></li>
+                    <li><a href="">Agregar Tema</a></li>
+                    <li><a href="">Personalizar sitio</a></li>
+                </ul>
+
+                <ul>
+                    <h4>Aprender más</h4>
+                    <li><a href="">Documentación</a></li>
+                    <li><a href="">Tutoriales</a></li>
+                    <li><a href="">Documentacion</a></li>
+                </ul>
+
+                <ul>
+                    <h4>Comunidad</h4>
+                    <li><a href="https://github.com/alexsandrov16/mint" target="_blank">Github</a></li>
+                    <li><a href="">Telegram</a></li>
+                </ul>
             </div>
-        </section>
-    </div>
+        </article>
+    </main>
+
+    <dialog class="modal" id="new-page">
+        <article>
+            <header>Añadir Página</header>
+
+            <form id="addPage" method="POST">
+
+                <label for="page">Título</label>
+                <input type="text" id="page" name="page" placeholder="Email address" required>
+
+                <label for="url">Url</label>
+                <input type="text" id="url" name="url" placeholder="Disabled" value="" disabled>
+
+                <label for=""></label>
+            </form>
+
+            <footer>
+                <button type="reset" form="addPage" onclick="toggleModal(event)" class="secondary">Cancelar</button>
+                <button type="submit" form="addPage">Continuar</button>
+            </footer>
+        </article>
+    </dialog>
+
+    <!--<article>
+        <header>asdasd</header>
+        <form action="" method="post">
+            <label for="">asdasd</label>
+            <input type="text" name="" id="">
+
+            <label for="">asdasd</label>
+            <input type="text" name="" id="">
+        </form>
+
+        <footer>
+            <button type="reset">cancel</button>
+            <button type="submit">confirm</button>
+        </footer>
+    </article>
+-->
+
+    <?=$page->js('script.js')?>
 </body>
 
 </html>
