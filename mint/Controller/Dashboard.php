@@ -36,6 +36,31 @@ class Dashboard
         ], true);
     }
 
+    public function pages()
+    {
+        return view(__FUNCTION__, [
+            'page_title' => 'Pages | ' . App::_name,
+            'page' => $this->theme
+        ], true);
+    }
+
+    public function addPage($page = '')
+    {
+        
+        return view('add', [
+            'page_title' => 'Add Page | ' . App::_name,
+            'page' => $this->theme
+        ], true);
+    }
+
+    public function setting()
+    {
+        return view(__FUNCTION__, [
+            'page_title' => 'Ajustes| ' . App::_name,
+            'page' => $this->theme
+        ], true);
+    }
+
     public function login()
     {
         if ($_POST) {
@@ -45,5 +70,10 @@ class Dashboard
             'page_title' => 'Iniciar Sesión | ' . App::_name,
             'page' => $this->theme
         ], true);
+    }
+
+    public function logoff()
+    {
+        # code...
     }
 }

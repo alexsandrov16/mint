@@ -44,8 +44,18 @@ class App
 
         $rute->get('/', ['Mint\Controller\FrontPage']);
 
-        //Dashboard
+        /**
+         * Dashboard
+         */
         $rute->map(['get','post'], '/admin', ['Mint\Controller\Dashboard']);
+        //pages
+        $rute->get('/admin/pages', ['Mint\Controller\Dashboard', 'pages']);
+        //add page
+        $rute->map(['get','post'], '/admin/pages/add', ['Mint\Controller\Dashboard', 'addPage']);
+        //edit or delete page
+        $rute->map(['get','post'], '/admin/pages/(:alpha)', ['Mint\Controller\Dashboard', 'addPage']);
+        //setting
+        $rute->get('/admin/settings', ['Mint\Controller\Dashboard', 'setting']);
 
         //Run
         $rute->routing();
