@@ -19,6 +19,8 @@ class Dashboard
 
         $session = new Session([
             'name' => env('session_name'),
+            'gc_maxlifetime' => env('session_timeout'),
+            'cookie_lifetime' => env('session_timeout')
         ]);
 
         $session->start();
