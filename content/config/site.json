@@ -10,5 +10,6 @@
     "language":          "es-ES",
     "charset":           "UTF-8",
     "session_name":      "mint",
+    "session_timeout":   1800,
     "root":              false
 }

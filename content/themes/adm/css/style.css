@@ -102,23 +102,40 @@ article footer button:last-child {
     margin-left: .5em;
 }
 
-.grid-row{
+.grid-row {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1em;
 }
 
 /*Login*/
-form.login {
-    width: 100%;
-    margin: 0 auto;
+.wrapper-login {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper-login article {
+    width: 90%;
+    height: max-content;
 }
 
 /* Small devices (landscape phones, 576px and up)*/
 @media (min-width: 576px) {}
 
 /* Medium devices (tablets, 768px and up)*/
-@media (min-width: 768px) {}
+@media (min-width: 768px) {
+
+    /*Login*/
+    .wrapper-login {
+        align-items: unset;
+    }
+
+    .wrapper-login article {
+        width: 500px;
+    }
+}
 
 /* Large devices (desktops, 992px and up)*/
 @media (min-width: 992px) {
@@ -127,11 +144,7 @@ form.login {
         --logo: 70px;
     }
 
-    form.login {
-        width: 60%;
-    }
-
-    .grid-row{
+    .grid-row {
         grid-template-columns: 2fr 1fr;
     }
 }

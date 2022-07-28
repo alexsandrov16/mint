@@ -56,6 +56,9 @@ class App
         $rute->map(['get','post'], '/admin/pages/(:alpha)', ['Mint\Controller\Dashboard', 'addPage']);
         //setting
         $rute->get('/admin/settings', ['Mint\Controller\Dashboard', 'setting']);
+        //login and logout
+        $rute->post('/admin/login', ['Mint\Controller\Dashboard','login']);
+        $rute->get('/admin/off', ['Mint\Controller\Dashboard','logoff']);
 
         //Run
         $rute->routing();

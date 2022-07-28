@@ -28,6 +28,7 @@ define('_MEDIA', DS.'content' . DS . 'media' . DS);
 define('_PAGES', ABS_PATH . 'content' . DS . 'pages' . DS);
 define('_PLUGINS', ABS_PATH . 'content' . DS . 'plugins' . DS);
 define('_THEMES', ABS_PATH . 'content' . DS . 'themes' . DS);
+define('_USRS', ABS_PATH . 'content' . DS . 'users' . DS);
 
 //Autoloader PSR4
 require_once 'autoload.php';

@@ -1,4 +1,8 @@
-<?php include _THEMES . 'adm/partial/header.php' ?>
+<?php
+
+use Mint\Cookies\Session;
+
+ include _THEMES . 'adm/partial/header.php' ?>
 
 <body>
     <?php include _THEMES . 'adm/partial/sidenav.php' ?>
@@ -8,7 +12,7 @@
     <main class="container">
         <div class="grid-row">
             <article>
-                <h4>Bienvenido 👋</h4>
+                <h4>Bienvenido <span><?=Session::get('username')?></span> 👋</h4>
                 <p>¡Esperamos que estés progresando en tu proyecto! Siéntase libre de leer las últimas noticias sobre Mint. Estamos haciendo todo lo posible para mejorar el producto en función de sus comentarios.</p>
                 <a href="<?= base('admin/pages/add') ?>" role="button">Comenzar</a>
             </article>

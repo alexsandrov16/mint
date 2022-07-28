@@ -6,6 +6,7 @@ defined('MINT') || die;
 use Mint\App;
 use Mint\Cookies\Session;
 use Mint\Helper\Theme;
+use Mint\Model\Login;
 
 /**
  * undocumented class
@@ -16,16 +17,16 @@ class Dashboard
     {
         $this->theme = new Theme(env('adm_theme'));
 
-        $this->session = new Session([
-            'name' => env('session_name')
+        $session = new Session([
+            'name' => env('session_name'),
         ]);
 
-        $this->session->start();
+        $session->start();
 
-        /*if (!$this->session->has('active')) {
+        if (!$session::has('active')) {
             $this->login();
             die;
-        }*/
+        }
     }
 
     public function index()
@@ -63,17 +64,20 @@ class Dashboard
 
     public function login()
     {
+        $message = '';
         if ($_POST) {
-            # code...
+            $message = (new Login)->logOn($_POST);
         }
         return view('login', [
             'page_title' => 'Iniciar Sesión | ' . App::_name,
-            'page' => $this->theme
+            'page' => $this->theme,
+            'message' => $message
         ], true);
     }
 
     public function logoff()
     {
-        # code...
+        Login::logOff();
+        redirect('admin');
     }
 }

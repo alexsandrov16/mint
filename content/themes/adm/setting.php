@@ -58,7 +58,7 @@
 
                     
                     <label for=""> Tiempo de sesión
-                        <input type="number" name="" id="" value="" min="0">
+                        <input type="number" name="" id="" value="<?=env('session_timeout')?>" min="0">
                         <small></small>
                     </label>
                 </div>

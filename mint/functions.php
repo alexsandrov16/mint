@@ -94,9 +94,9 @@ function view(string $filename, array $data, bool $adm = false)
  * @return mixed
  * @throws conditon
  **/
-function redirect(string $path = '/')
+function redirect(string $path = null)
 {
-    return preg_match('#http://#', $path) ? header("Location:$path") : header('Location:'.env('base_url').$path) ;
+    return preg_match('#http://#', $path) ? header("Location:$path") : header('Location:'.base($path)) ;
 }
 
 /**

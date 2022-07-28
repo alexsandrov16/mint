@@ -19,20 +19,20 @@ class Session
         return session_start($this->options);
     }
 
-    public function set(string $name, $value)
+    static function set(string $name, $value)
     {
         $_SESSION[$name] = $value;
     }
 
-    public function get(string $name)
+    static function get(string $name)
     {
-        if (isset($_SESSION) && $this->has($name)) {
+        if (isset($_SESSION) && self::has($name)) {
             return $_SESSION[$name];
         }
         throw new \Exception("Undefined Session $name");
         
     }
-    public function all()
+    static function all()
     {
         if (isset($_SESSION)) {
             return $_SESSION;
@@ -40,12 +40,12 @@ class Session
         throw new \Exception("Undefined Sessions");
     }
 
-    public function has(string $name): bool
+    static function has(string $name): bool
     {
-        return array_key_exists($name, $this->all());
+        return array_key_exists($name, self::all());
     }
 
-    public function destroy(): bool
+    static function destroy(): bool
     {
         return session_destroy();
     }
